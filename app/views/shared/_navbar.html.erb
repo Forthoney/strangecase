@@ -1,4 +1,4 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar has-background-light" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <%= link_to image_tag("https://bulma.io/images/bulma-logo.png", size: "112x28", alt: "Home Page"), root_path, class: "navbar-item" %>
 
@@ -46,8 +46,8 @@
       <div class="navbar-item">
         <div class="buttons">
           <% if user_signed_in? %>
-            <strong><%= current_user.email %></strong>
             <%= link_to 'Submit theme', new_theme_path, class: "button is-primary" %>
+            <%= link_to 'Profile', current_user, class: 'button is-light' %>
           <% else %>
             <%= link_to new_user_registration_path, class: "button is-primary" do %>
               <strong>Sign up</strong>
