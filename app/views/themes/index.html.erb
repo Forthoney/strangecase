@@ -1,14 +1,7 @@
-<h1>strangecase</h1>
-<%= link_to 'Submit theme', new_theme_path %>
+<div class="theme-list">
+  <% @themes.each do |theme| %>
+    <h3><%= theme.name %></h3>
+    <%= link_to theme.name, theme %><br>
+  <% end %>
+</div>
 
-<% if user_signed_in? %>
-  Logged in  as <strong><%= current_user.email %></strong>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path %><br>
-  <%= link_to "Login", new_user_session_path %><br>
-<% end %>
-
-<% @themes.each do |theme| %>
-  <h3><%= theme.name %></h3>
-  <%= link_to theme.name, theme %><br>
-<% end %>
