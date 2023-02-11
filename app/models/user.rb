@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :themes
+
+  validates :email, uniqueness: true
+  validates :username, uniqueness: true
 end
