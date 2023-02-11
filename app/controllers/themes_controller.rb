@@ -1,4 +1,7 @@
 class ThemesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_author!, only: [:edit, :update]
+
   def index
     @themes = Theme.all
   end
@@ -11,8 +14,8 @@ class ThemesController < ApplicationController
     @theme = Theme.new
   end
 
-  def create 
-    @theme = Theme.new(theme_params)
+  def create
+    @theme = current_user.themes.create(theme_params)
 
     if @theme.save
       redirect_to @theme
@@ -39,5 +42,9 @@ class ThemesController < ApplicationController
 
   def theme_params
     params.require(:theme).permit(:name, :description)
+  end
+
+  def authenticate_author!
+    redirect_to root_path unless @theme.user_id == current_user.id
   end
 end

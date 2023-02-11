@@ -1,8 +1,8 @@
 <section class="section">
   <div class="container">
-    <div class="columns is-centered is-multiline">
+    <div class="columns is-multiline">
       <% @themes.each do |theme| %>
-        <div class="column">
+        <div class="column is-one-third">
           <div class="notification has-text-black">
             <%= link_to theme.name, theme, class: "title is-size-4" %>
           </div>
