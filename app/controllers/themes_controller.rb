@@ -41,7 +41,7 @@ class ThemesController < ApplicationController
   private
 
   def theme_params
-    params.require(:theme).permit(:name, :description)
+    params.require(:theme).permit(:name, :description, images: [])
   end
 
   def authenticate_author!

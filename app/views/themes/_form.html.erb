@@ -12,6 +12,18 @@
   </div>
 
   <div class="field">
+    <%= form.label :images, class: "label" %>
+    <div class="control">
+      <%= form.file_field :images, multiple: true, class: "file" %>
+      <% theme.errors.full_messages_for(:images).each do |msg| %>
+        <div class="form-error">
+          <%= msg %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="field">
     <%= form.label :description, class: "label" %>
     <div class="control">
       <%= form.text_area :description, class: "textarea" %>
