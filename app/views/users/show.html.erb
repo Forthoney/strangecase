@@ -1,5 +1,7 @@
 <section class="section">
   <div class="container">
-    <h2><%= @user.email %></h2>
+    <h2 class="title"><%= @user.username %></h2>
+    <h3 class="subtitle"><%= @user.email %></h3>
+    <%= link_to "Logout", destroy_user_session_path, class: "button is-warning" %>
   </div>
 </section>

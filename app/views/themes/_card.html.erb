@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-content">
+    <div class="content">
+      <%= link_to theme.name, theme, class: "title is-4" %><br>
+      <%= link_to "@#{theme.user.username}", theme.user, class: "subtitle is-6" %>
+    </div>
+
+    <div class="content">
+      <%= theme.description %>
+    </div>
+  </div>
+</div>

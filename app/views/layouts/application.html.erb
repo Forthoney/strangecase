@@ -14,15 +14,17 @@
   <body>
     <%= render partial: "shared/navbar" %>
     <% if (notice || alert) %>
-        <% if notice %>
-          <div class="container notification">
-            <p class="notice"><%= notice %></p>
-          </div>
-        <% else %>
-          <div class="container notification is-warning">
-            <p class="alert"><%= alert %></p>
-          </div>
-        <% end %>
+      <% if notice %>
+        <div class="message is-info">
+          <div class="message-header">Notice</div> 
+          <p class="notice"><%= notice %></p>
+        </div>
+      <% else %>
+        <div class="message is-warning">
+          <div class="message-header">Warning</div> 
+          <p class="alert"><%= alert %></p>
+        </div>
+      <% end %>
     <% end %>
     <%= yield %>
   </body>

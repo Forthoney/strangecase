@@ -3,9 +3,7 @@
     <div class="columns is-multiline">
       <% @themes.each do |theme| %>
         <div class="column is-one-third">
-          <div class="notification has-text-black">
-            <%= link_to theme.name, theme, class: "title is-size-4" %>
-          </div>
+          <%= render "card", theme: theme%>
         </div>
       <% end %>
     </div>
